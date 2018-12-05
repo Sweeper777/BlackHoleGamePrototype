@@ -23,6 +23,16 @@ struct TriangularArray<T> : Sequence, ExpressibleByArrayLiteral {
             }
             return innerArray[row][index]
         }
+        
+        set {
+            if row < 0 || row >= innerArray.count {
+                return
+            }
+            if index < 0 || index > row {
+                return
+            }
+            innerArray[row][index] = newValue!
+        }
     }
     init(arrayLiteral elements: ArrayLiteralElement...) {
         rowCount = elements.count
