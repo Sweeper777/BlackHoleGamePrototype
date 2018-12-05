@@ -34,9 +34,18 @@ struct TriangularArray<T> : Sequence, ExpressibleByArrayLiteral {
             innerArray[row][index] = newValue!
         }
     }
+    
+    func makeIterator() -> TriangularArray<T>._Iterator {
+        return _Iterator(triangularArray: self, currentRow: -1, currentIndex: -1)
+    }
     init(arrayLiteral elements: ArrayLiteralElement...) {
         rowCount = elements.count
         innerArray = elements
     }
+    
+    typealias Element = T
+    typealias Iterator = _Iterator
+    typealias ArrayLiteralElement = [T]
+    
 }
 
