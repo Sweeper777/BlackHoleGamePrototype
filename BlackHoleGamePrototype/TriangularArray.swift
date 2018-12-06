@@ -52,6 +52,11 @@ struct TriangularArray<T> : Sequence, ExpressibleByArrayLiteral {
             (0..<rowCount).contains($0.0) && (0...$0.0).contains($0.1)
         }
     }
+    
+    func adjacentElements(forRow row: Int, index: Int) -> [T] {
+        return adjacentIndices(forRow: row, index: index).map { self[$0.1, $0.1]! }
+    }
+    
     init(arrayLiteral elements: ArrayLiteralElement...) {
         rowCount = elements.count
         innerArray = elements
