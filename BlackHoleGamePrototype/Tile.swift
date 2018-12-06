@@ -8,3 +8,10 @@ enum PlayerSide {
     case red
     case blue
 }
+
+enum GameResult {
+    case redWins
+    case blueWins
+    case draw
+    case undecided
+}
