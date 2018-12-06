@@ -14,6 +14,16 @@ extension TriangularArray where T == Tile {
         }.count
     }
     
+    func indexOfEmpty() -> (Int, Int)? {
+        for i in 0..<rowCount {
+            for j in 0..<(i + 1) {
+                if case .some(.empty) = self[i, j] {
+                    return (i, j)
+                }
+            }
+        }
+        return nil
+    }
 }
 
 enum PlayerSide {
