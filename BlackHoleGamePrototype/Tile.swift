@@ -4,3 +4,7 @@ enum Tile {
     case blue(number: Int)
 }
 
+enum PlayerSide {
+    case red
+    case blue
+}
