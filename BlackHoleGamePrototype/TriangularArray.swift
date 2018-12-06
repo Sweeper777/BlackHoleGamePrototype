@@ -66,5 +66,24 @@ struct TriangularArray<T> : Sequence, ExpressibleByArrayLiteral {
     typealias Iterator = _Iterator
     typealias ArrayLiteralElement = [T]
     
+    struct _Iterator : IteratorProtocol {
+        let triangularArray: TriangularArray
+        var currentRow: Int
+        var currentIndex: Int
+        
+        mutating func next() -> T? {
+            currentIndex += 1
+            if currentIndex > currentRow {
+                currentIndex = 0
+                currentRow += 1
+            }
+            if currentRow >= triangularArray.rowCount {
+                return nil
+            }
+            return triangularArray[currentRow, currentIndex]
+        }
+        
+        typealias Element = T
+    }
 }
 
