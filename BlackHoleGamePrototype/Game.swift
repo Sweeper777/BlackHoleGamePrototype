@@ -25,4 +25,22 @@ class Game {
         }
     }
     
+    @discardableResult
+    func makeMove(row: Int, index: Int) -> Bool {
+        if board.emptyCount > 1 {
+            if case .some(.empty) = board[row, index] {
+                switch currentTurn {
+                case .red:
+                    board[row, index] = .red(number: currentNumber)
+                    currentTurn = .blue
+                case .blue:
+                    board[row, index] = .blue(number: currentNumber)
+                    currentTurn = .red
+                    currentNumber += 1
+                }
+                return true
+            }
+        }
+        return false
+    }
 }
