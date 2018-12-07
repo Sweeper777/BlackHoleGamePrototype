@@ -67,4 +67,29 @@ class Game {
             return .draw
         }
     }
+    
+    
+}
+
+extension Game: CustomStringConvertible {
+    var description: String {
+        var desc = ""
+        for i in 0..<boardSize {
+            for _ in 0..<(boardSize - i - 1) {
+                desc += " "
+            }
+            for j in 0..<(i + 1) {
+                switch board[i, j]! {
+                case .empty:
+                    desc += ANSIColors.white + "0 "
+                case .red(let num):
+                    desc += ANSIColors.red + "\(num) "
+                case .blue(let num):
+                    desc += ANSIColors.blue + "\(num) "
+                }
+            }
+            desc += "\n"
+        }
+        return desc
+    }
 }
