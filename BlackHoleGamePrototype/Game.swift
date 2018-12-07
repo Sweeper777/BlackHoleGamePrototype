@@ -16,4 +16,13 @@ class Game {
         currentNumber = game.currentNumber
     }
     
+    func canMakeMove(row: Int, index: Int) -> Bool {
+        switch board[row, index] {
+        case .some(.empty):
+            return true
+        default:
+            return false
+        }
+    }
+    
 }
