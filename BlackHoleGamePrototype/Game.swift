@@ -43,4 +43,28 @@ class Game {
         }
         return false
     }
+    
+    func checkWin() -> GameResult {
+        if board.emptyCount != 1 {
+            return .undecided
+        }
+        guard let indexOfEmpty = board.indexOfEmpty() else { return .undecided }
+        let adjacentTiles = board.adjacentElements(forRow: indexOfEmpty.0, index: indexOfEmpty.1)
+        let (redScore, blueScore) = adjacentTiles.reduce((0, 0), {
+            result, tile in
+            if case .red(let num)  = tile {
+                return (result.0 + num, result.1)
+            } else if case .blue(let num) = tile {
+                return (result.0, result.1 + num)
+            }
+            return result
+        })
+        if redScore < blueScore {
+            return .redWins
+        } else if redScore > blueScore {
+            return .blueWins
+        } else {
+            return .draw
+        }
+    }
 }
