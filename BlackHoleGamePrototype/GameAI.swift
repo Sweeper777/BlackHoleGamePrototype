@@ -33,4 +33,32 @@ class GameAI {
         return moves
     }
     
+    private func minimax(depth: Int, color: PlayerSide) -> (score: Int, row: Int, index: Int) {
+        var bestScore = color == myColor ? Int.min : Int.max
+        var currentScore: Int
+        var bestMove: (row: Int, index: Int)?
+        if game.checkWin() != .undecided {
+            bestScore = evaluateHeuristics()
+        } else {
+            for move in getAvailableMoves() {
+                game.makeMove(row: move.row, index: move.index)
+                if color == myColor {
+                    currentScore = minimax(depth: depth - 1, color: game.currentTurn).score
+                    if currentScore > bestScore {
+                        bestScore = currentScore
+                        bestMove = move
+                    }
+                } else {
+                    currentScore = minimax(depth: depth - 1, color: game.currentTurn).score
+                    if currentScore < bestScore {
+                        bestScore = currentScore
+                        bestMove = move
+                    }
+                }
+               
+                // TODO: Undo move
+            }
+        }
+        return (bestScore, bestMove?.row ?? 0, bestMove?.index ?? 0)
+    }
 }
