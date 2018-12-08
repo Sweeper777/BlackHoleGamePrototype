@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A34782221B3ED3200C20D45 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34782121B3ED3200C20D45 /* GameAI.swift */; };
 		5A38ABCD21B2A68600ADD9DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABCC21B2A68600ADD9DB /* main.swift */; };
+		5A38ABD421B2A6B000ADD9DB /* TriangularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD321B2A6B000ADD9DB /* TriangularArray.swift */; };
+		5A38ABD621B2A97E00ADD9DB /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD521B2A97E00ADD9DB /* Tile.swift */; };
+		5A38ABD821B2AB7200ADD9DB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD721B2AB7200ADD9DB /* Colors.swift */; };
+		5A38ABDA21B2ABA100ADD9DB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD921B2ABA100ADD9DB /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A34782121B3ED3200C20D45 /* GameAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 		5A38ABC921B2A68600ADD9DB /* BlackHoleGamePrototype */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlackHoleGamePrototype; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A38ABCC21B2A68600ADD9DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5A38ABD321B2A6B000ADD9DB /* TriangularArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangularArray.swift; sourceTree = "<group>"; };
+		5A38ABD521B2A97E00ADD9DB /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		5A38ABD721B2AB7200ADD9DB /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5A38ABD921B2ABA100ADD9DB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +67,11 @@
 		5A38ABCB21B2A68600ADD9DB /* BlackHoleGamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				5A38ABD321B2A6B000ADD9DB /* TriangularArray.swift */,
+				5A38ABD521B2A97E00ADD9DB /* Tile.swift */,
+				5A38ABD721B2AB7200ADD9DB /* Colors.swift */,
+				5A38ABD921B2ABA100ADD9DB /* Game.swift */,
+				5A34782121B3ED3200C20D45 /* GameAI.swift */,
 				5A38ABCC21B2A68600ADD9DB /* main.swift */,
 			);
 			path = BlackHoleGamePrototype;
@@ -119,6 +134,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A38ABD621B2A97E00ADD9DB /* Tile.swift in Sources */,
+				5A38ABDA21B2ABA100ADD9DB /* Game.swift in Sources */,
+				5A38ABD821B2AB7200ADD9DB /* Colors.swift in Sources */,
+				5A34782221B3ED3200C20D45 /* GameAI.swift in Sources */,
+				5A38ABD421B2A6B000ADD9DB /* TriangularArray.swift in Sources */,
 				5A38ABCD21B2A68600ADD9DB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
