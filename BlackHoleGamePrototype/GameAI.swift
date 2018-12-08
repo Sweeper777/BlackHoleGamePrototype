@@ -61,4 +61,9 @@ class GameAI {
         }
         return (bestScore, bestMove?.row ?? 0, bestMove?.index ?? 0)
     }
+    
+    func getNextMove() -> (row: Int, index: Int) {
+        let result = minimax(depth: 6, color: myColor)
+        return (result.row, result.index)
+    }
 }
