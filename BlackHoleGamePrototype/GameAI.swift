@@ -30,6 +30,11 @@ class GameAI {
                 }
             }
         }
+        results = results.filter { $0 != .draw }
+        let iWin = myColor == .blue ? GameResult.blueWins : .redWins
+        let iWinCount = results.filter { $0 == iWin }.count
+        let iLoseCount = results.count - iWinCount
+        return iWinCount - iLoseCount
     }
     
     func evaluateAdjacnetTiles(at indexOfEmpty: (row: Int, index: Int)) -> GameResult {
