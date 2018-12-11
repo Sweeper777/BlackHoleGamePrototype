@@ -32,6 +32,13 @@ class GameAI {
             }
             return result
         })
+        if redScore < blueScore {
+            return .redWins
+        } else if redScore > blueScore {
+            return .blueWins
+        } else {
+            return .draw
+        }
     }
     
     func getAvailableMoves() -> [(row: Int, index: Int)] {
