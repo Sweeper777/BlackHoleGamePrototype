@@ -66,4 +66,14 @@ class GameAI {
         let result = minimax(depth: 6, color: myColor)
         return (result.row, result.index)
     }
+    
+    func undoMove(row: Int, index: Int) {
+        game.board[row, index] = .empty
+        if game.currentTurn == .red {
+            game.currentTurn = .blue
+            game.currentNumber -= 1
+        } else {
+            game.currentTurn = .red
+        }
+    }
 }
