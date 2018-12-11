@@ -21,6 +21,17 @@ class GameAI {
         }
     }
     
+    func evaluateInUndecidedCase() -> Int {
+        var results = [GameResult]()
+        for i in 0..<game.board.rowCount {
+            for j in 0..<i+1 {
+                if case .some(.empty) = game.board[i, j] {
+                    results.append(evaluateAdjacnetTiles(at: (i, j)))
+                }
+            }
+        }
+    }
+    
     func evaluateAdjacnetTiles(at indexOfEmpty: (row: Int, index: Int)) -> GameResult {
         let adjacentTiles = game.board.adjacentElements(forRow: indexOfEmpty.row, index: indexOfEmpty.index)
         let (redScore, blueScore) = adjacentTiles.reduce((0, 0), {
