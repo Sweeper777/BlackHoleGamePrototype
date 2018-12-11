@@ -13,7 +13,7 @@ class GameAI {
         if result == .draw {
             return 100
         } else if result == .undecided {
-            return 0
+            return evaluateInUndecidedCase()
         } else if (result == .blueWins && myColor == .blue) || (result == .redWins && myColor == .red) {
             return 10000
         } else {
