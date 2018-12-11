@@ -21,6 +21,19 @@ class GameAI {
         }
     }
     
+    func evaluateAdjacnetTiles(at indexOfEmpty: (row: Int, index: Int)) -> GameResult {
+        let adjacentTiles = game.board.adjacentElements(forRow: indexOfEmpty.row, index: indexOfEmpty.index)
+        let (redScore, blueScore) = adjacentTiles.reduce((0, 0), {
+            result, tile in
+            if case .red(let num)  = tile {
+                return (result.0 + num, result.1)
+            } else if case .blue(let num) = tile {
+                return (result.0, result.1 + num)
+            }
+            return result
+        })
+    }
+    
     func getAvailableMoves() -> [(row: Int, index: Int)] {
         var moves = [(row: Int, index: Int)]()
         for i in 0..<game.boardSize {
