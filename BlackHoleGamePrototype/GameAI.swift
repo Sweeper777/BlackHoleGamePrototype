@@ -56,7 +56,7 @@ class GameAI {
                     }
                 }
                
-                // TODO: Undo move
+                undoMove(row: move.row, index: move.index)
             }
         }
         return (bestScore, bestMove?.row ?? 0, bestMove?.index ?? 0)
