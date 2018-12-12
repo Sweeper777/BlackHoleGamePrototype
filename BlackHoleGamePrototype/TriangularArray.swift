@@ -54,7 +54,7 @@ struct TriangularArray<T> : Sequence, ExpressibleByArrayLiteral {
     }
     
     func adjacentElements(forRow row: Int, index: Int) -> [T] {
-        return adjacentIndices(forRow: row, index: index).map { self[$0.1, $0.1]! }
+        return adjacentIndices(forRow: row, index: index).map { self[$0.0, $0.1]! }
     }
     
     init(arrayLiteral elements: ArrayLiteralElement...) {
