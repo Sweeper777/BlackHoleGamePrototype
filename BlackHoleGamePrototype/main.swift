@@ -9,6 +9,28 @@ func testGameMakeMove() {
     print(game)
 }
 
+func gameWithAIFixedDepth() {
+    let game = Game()
+
+    while (game.checkWin() == .undecided) {
+        print(game)
+        if (game.currentTurn == .red) {
+            var row = -1
+            var index = -1
+            repeat {
+                let coordinates = readLine()!.split(separator: " ")
+                row = Int(coordinates[0])!
+                index = Int(coordinates[1])!
+            } while (!game.makeMove(row: row, index: index))
+        } else {
+            let ai = GameAI(game: Game(copyOf: game), myColor: .blue)
+            let (row, index) = ai.getNextMove()
+            game.makeMove(row: row, index: index)
+        }
+    }
+    print(game)
+    print(game.checkWin())
+}
 
     print(game)
 }
