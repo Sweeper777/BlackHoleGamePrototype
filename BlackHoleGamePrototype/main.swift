@@ -56,5 +56,28 @@ func searchDepth(forTurn turn: Int) -> Int {
     return 6
 }
 
+func gameWithAIVariableDepth() {
+    let game = Game()
+    var turn = 0
+    while (game.checkWin() == .undecided) {
+        print(game)
+        if (game.currentTurn == .red) {
+            var row = -1
+            var index = -1
+            repeat {
+                let coordinates = readLine()!.split(separator: " ")
+                row = Int(coordinates[0])!
+                index = Int(coordinates[1])!
+            } while (!game.makeMove(row: row, index: index))
+        } else {
+            let ai = GameAI(game: Game(copyOf: game), myColor: .blue)
+            let (row, index) = ai.getNextMove(searchDepth: searchDepth(forTurn: turn))
+            game.makeMove(row: row, index: index)
+        }
+        turn += 1
+    }
+    print(game)
+    print(game.checkWin())
+}
     print(game)
 }
