@@ -45,5 +45,16 @@ func testCheckWin() {
     game.board = board
     print(game.checkWin())
 }
+
+func searchDepth(forTurn turn: Int) -> Int {
+    if turn < 10 {
+        return 2
+    }
+    if turn < 14 {
+        return 4
+    }
+    return 6
+}
+
     print(game)
 }
