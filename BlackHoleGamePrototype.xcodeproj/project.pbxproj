@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		5A34782221B3ED3200C20D45 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34782121B3ED3200C20D45 /* GameAI.swift */; };
+		5A373BFD21BD3FF100351B00 /* BlackHoleGamePrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A373BFC21BD3FF100351B00 /* BlackHoleGamePrototypeTests.swift */; };
+		5A373C0221BD429800351B00 /* TriangularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD321B2A6B000ADD9DB /* TriangularArray.swift */; };
+		5A373C0321BD429B00351B00 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD521B2A97E00ADD9DB /* Tile.swift */; };
+		5A373C0421BD429E00351B00 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD721B2AB7200ADD9DB /* Colors.swift */; };
+		5A373C0521BD42A100351B00 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD921B2ABA100ADD9DB /* Game.swift */; };
+		5A373C0621BD42A300351B00 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34782121B3ED3200C20D45 /* GameAI.swift */; };
 		5A38ABCD21B2A68600ADD9DB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABCC21B2A68600ADD9DB /* main.swift */; };
 		5A38ABD421B2A6B000ADD9DB /* TriangularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD321B2A6B000ADD9DB /* TriangularArray.swift */; };
 		5A38ABD621B2A97E00ADD9DB /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38ABD521B2A97E00ADD9DB /* Tile.swift */; };
@@ -29,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		5A34782121B3ED3200C20D45 /* GameAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
+		5A373BFA21BD3FF100351B00 /* BlackHoleGamePrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackHoleGamePrototypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A373BFC21BD3FF100351B00 /* BlackHoleGamePrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackHoleGamePrototypeTests.swift; sourceTree = "<group>"; };
+		5A373BFE21BD3FF100351B00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A38ABC921B2A68600ADD9DB /* BlackHoleGamePrototype */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BlackHoleGamePrototype; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A38ABCC21B2A68600ADD9DB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5A38ABD321B2A6B000ADD9DB /* TriangularArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangularArray.swift; sourceTree = "<group>"; };
@@ -38,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A373BF721BD3FF100351B00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A38ABC621B2A68600ADD9DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A373BFB21BD3FF100351B00 /* BlackHoleGamePrototypeTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A373BFC21BD3FF100351B00 /* BlackHoleGamePrototypeTests.swift */,
+				5A373BFE21BD3FF100351B00 /* Info.plist */,
+			);
+			path = BlackHoleGamePrototypeTests;
+			sourceTree = "<group>";
+		};
 		5A38ABC021B2A68600ADD9DB = {
 			isa = PBXGroup;
 			children = (
 				5A38ABCB21B2A68600ADD9DB /* BlackHoleGamePrototype */,
+				5A373BFB21BD3FF100351B00 /* BlackHoleGamePrototypeTests */,
 				5A38ABCA21B2A68600ADD9DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5A38ABC921B2A68600ADD9DB /* BlackHoleGamePrototype */,
+				5A373BFA21BD3FF100351B00 /* BlackHoleGamePrototypeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +107,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A373BF921BD3FF100351B00 /* BlackHoleGamePrototypeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A373C0121BD3FF100351B00 /* Build configuration list for PBXNativeTarget "BlackHoleGamePrototypeTests" */;
+			buildPhases = (
+				5A373BF621BD3FF100351B00 /* Sources */,
+				5A373BF721BD3FF100351B00 /* Frameworks */,
+				5A373BF821BD3FF100351B00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlackHoleGamePrototypeTests;
+			productName = BlackHoleGamePrototypeTests;
+			productReference = 5A373BFA21BD3FF100351B00 /* BlackHoleGamePrototypeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5A38ABC821B2A68600ADD9DB /* BlackHoleGamePrototype */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A38ABD021B2A68600ADD9DB /* Build configuration list for PBXNativeTarget "BlackHoleGamePrototype" */;
@@ -107,6 +151,9 @@
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Mulang Su";
 				TargetAttributes = {
+					5A373BF921BD3FF100351B00 = {
+						CreatedOnToolsVersion = 10.0;
+					};
 					5A38ABC821B2A68600ADD9DB = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -125,11 +172,35 @@
 			projectRoot = "";
 			targets = (
 				5A38ABC821B2A68600ADD9DB /* BlackHoleGamePrototype */,
+				5A373BF921BD3FF100351B00 /* BlackHoleGamePrototypeTests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		5A373BF821BD3FF100351B00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		5A373BF621BD3FF100351B00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A373C0321BD429B00351B00 /* Tile.swift in Sources */,
+				5A373C0521BD42A100351B00 /* Game.swift in Sources */,
+				5A373C0421BD429E00351B00 /* Colors.swift in Sources */,
+				5A373C0621BD42A300351B00 /* GameAI.swift in Sources */,
+				5A373C0221BD429800351B00 /* TriangularArray.swift in Sources */,
+				5A373BFD21BD3FF100351B00 /* BlackHoleGamePrototypeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A38ABC521B2A68600ADD9DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +217,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5A373BFF21BD3FF100351B00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E9MW74DJ4Y;
+				INFOPLIST_FILE = BlackHoleGamePrototypeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.BlackHoleGamePrototypeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		5A373C0021BD3FF100351B00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E9MW74DJ4Y;
+				INFOPLIST_FILE = BlackHoleGamePrototypeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.BlackHoleGamePrototypeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 		5A38ABCE21B2A68600ADD9DB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -284,6 +391,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A373C0121BD3FF100351B00 /* Build configuration list for PBXNativeTarget "BlackHoleGamePrototypeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A373BFF21BD3FF100351B00 /* Debug */,
+				5A373C0021BD3FF100351B00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A38ABC421B2A68600ADD9DB /* Build configuration list for PBXProject "BlackHoleGamePrototype" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
