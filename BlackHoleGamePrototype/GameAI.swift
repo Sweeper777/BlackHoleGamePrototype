@@ -73,7 +73,7 @@ class GameAI {
         var bestScore = color == myColor ? Int.min : Int.max
         var currentScore: Int
         var bestMove: (row: Int, index: Int)?
-        if game.checkWin() != .undecided {
+        if game.checkWin() != .undecided || depth == 0 {
             bestScore = evaluateHeuristics()
         } else {
             for move in getAvailableMoves() {
@@ -98,8 +98,8 @@ class GameAI {
         return (bestScore, bestMove?.row ?? 0, bestMove?.index ?? 0)
     }
     
-    func getNextMove() -> (row: Int, index: Int) {
-        let result = minimax(depth: 6, color: myColor)
+    func getNextMove(searchDepth: Int = 4) -> (row: Int, index: Int) {
+        let result = minimax(depth: searchDepth, color: myColor)
         return (result.row, result.index)
     }
     
