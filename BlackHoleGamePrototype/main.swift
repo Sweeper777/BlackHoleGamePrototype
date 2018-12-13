@@ -79,5 +79,18 @@ func gameWithAIVariableDepth() {
     print(game)
     print(game.checkWin())
 }
+
+func twoAIs() {
+    let game = Game()
+    var turn = 0
+    while (game.checkWin() == .undecided) {
+        print(game)
+        let ai = GameAI(game: Game(copyOf: game), myColor: game.currentTurn)
+        let (row, index) = ai.getNextMove(searchDepth: searchDepth(forTurn: turn))
+        game.makeMove(row: row, index: index)
+        turn += 1
+    }
     print(game)
+    print(game.checkWin())
 }
+twoAIs()
