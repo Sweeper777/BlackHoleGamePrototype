@@ -19,6 +19,35 @@ class BlackHoleGamePrototypeTests: XCTestCase {
         array[0, 0] = 10
         XCTAssertEqual(array[0, 0], 10)
     }
+    
+    func testAdjacentElementsAndIndices() {
+        let array: TriangularArray = [
+                        [-1],
+                      [0,  1],
+                    [2,  3,   4],
+                 [5,   6,   7,   8],
+               [9,  10,  11,  12,  13],
+            [14,  15,  16,  17,  18,  19]
+        ]
+        var adjacentIndices = array.adjacentIndices(forRow: 0, index: 0)
+        XCTAssertTrue(adjacentIndices.allSatisfy({ (tuple) -> Bool in
+            [(1, 0), (1, 1)].contains(where: { $0.0 == tuple.0 && $0.1 == tuple.1 })
+        }))
+        XCTAssertEqual(adjacentIndices.count, 2)
+        
+        var adjacentElements = array.adjacentElements(forRow: 0, index: 0)
+        XCTAssertEqual(Set(adjacentElements), [0, 1])
+        
+        adjacentIndices = array.adjacentIndices(forRow: 3, index: 1)
+        XCTAssertTrue(adjacentIndices.allSatisfy({ (tuple) -> Bool in
+            [(3, 0), (3, 2), (2, 0), (2, 1), (4, 1), (4, 2)]
+                .contains(where: { $0.0 == tuple.0 && $0.1 == tuple.1 })
+        }))
+        XCTAssertEqual(adjacentIndices.count, 6)
+        
+        adjacentElements = array.adjacentElements(forRow: 3, index: 1)
+        XCTAssertEqual(Set(adjacentElements), [2, 3, 5, 7, 10, 11])
+    }
 
     func testGameCanMakeMove() {
         let game = Game()
