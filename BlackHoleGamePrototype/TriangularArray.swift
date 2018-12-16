@@ -58,6 +58,9 @@ struct TriangularArray<T> : Sequence, ExpressibleByArrayLiteral {
     }
     
     init(arrayLiteral elements: ArrayLiteralElement...) {
+        if (elements.map { $0.count }) != Array(1...elements.count) {
+            fatalError("Array literal is not triangular!")
+        }
         rowCount = elements.count
         innerArray = elements
     }
