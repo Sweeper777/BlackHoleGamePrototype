@@ -10,6 +10,15 @@ class BlackHoleGamePrototypeTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testTriangularArray() {
+        var array = TriangularArray(rowCount: 6, defaultValue: 0)
+        XCTAssertNil(array[0, 1])
+        XCTAssertEqual(array[0, 0], 0)
+        XCTAssertNil(array[6, 0])
+        array[0, 0] = 10
+        XCTAssertEqual(array[0, 0], 10)
+    }
 
     func testGameCanMakeMove() {
         let game = Game()
