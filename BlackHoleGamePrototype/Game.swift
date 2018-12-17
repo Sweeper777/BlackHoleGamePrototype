@@ -82,6 +82,10 @@ extension Game: CustomStringConvertible {
                 switch board[i, j]! {
                 case .empty:
                     desc += ANSIColors.white + "0 "
+                case .red(10):
+                    desc += ANSIColors.red + "⒑ "
+                case .blue(10):
+                    desc += ANSIColors.blue + "⒑ "
                 case .red(let num):
                     desc += ANSIColors.red + "\(num) "
                 case .blue(let num):
