@@ -34,7 +34,7 @@ func gameWithAIFixedDepth() {
 
 func searchDepth(forTurn turn: Int) -> Int {
     if turn < 10 {
-        return 2
+        return 3
     }
     if turn < 14 {
         return 4
