@@ -115,4 +115,17 @@ class BlackHoleGamePrototypeTests: XCTestCase {
         XCTAssertEqual(game.checkWin(), .undecided)
     }
     
+    func testCheckWinDraw() {
+        let board: TriangularArray<Tile> = [
+            [.red(number: 1)],
+            [.red(number: 2), .red(number: 3)],
+            [.red(number: 5), .red(number: 4), .red(number: 6)],
+            [.blue(number: 5), .blue(number: 6), .blue(number: 1), .red(number: 7)],
+            [.blue(number: 7), .blue(number: 8), .blue(number: 2), .blue(number: 3), .red(number: 8)],
+            [.blue(number: 9), .red(number: 6), .empty, .red(number: 4), .red(number: 10), .red(number: 9)],
+            ]
+        let game = Game()
+        game.board = board
+        XCTAssertEqual(game.checkWin(), .draw)
+    }
 }
