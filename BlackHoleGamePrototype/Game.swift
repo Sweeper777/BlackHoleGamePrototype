@@ -4,7 +4,7 @@ class Game {
     var board: TriangularArray<Tile>
     var currentTurn = PlayerSide.red
     var currentNumber = 1
-    let boardSize = 6
+    let boardSize = 7
     
     init() {
         board = TriangularArray(rowCount: boardSize, defaultValue: .empty)
