@@ -57,6 +57,12 @@ class BlackHoleGamePrototypeTests: XCTestCase {
         XCTAssertTrue(game.makeMove(row: 1, index: 0))
         XCTAssertFalse(game.canMakeMove(row: 1, index: 0))
     }
+    
+    func testGameCanMakeMoveWithWalls() {
+        let game = Game(boardSize: 7)
+        XCTAssertFalse(game.canMakeMove(row: 6, index: 2))
+        XCTAssertTrue(game.canMakeMove(row: 6, index: 3))
+    }
 
     func testGameMakeMove() {
         let game = Game()
