@@ -4,9 +4,10 @@ class Game {
     var board: TriangularArray<Tile>
     var currentTurn = PlayerSide.red
     var currentNumber = 1
-    let boardSize = 7
+    let boardSize: Int
     
-    init() {
+    init(boardSize: Int = 6) {
+        self.boardSize = boardSize
         board = TriangularArray(rowCount: boardSize, defaultValue: .empty)
     }
     
@@ -14,6 +15,7 @@ class Game {
         board = game.board
         currentTurn = game.currentTurn
         currentNumber = game.currentNumber
+        boardSize = game.boardSize
     }
     
     func canMakeMove(row: Int, index: Int) -> Bool {
