@@ -9,6 +9,15 @@ class Game {
     init(boardSize: Int = 6) {
         self.boardSize = boardSize
         board = TriangularArray(rowCount: boardSize, defaultValue: .empty)
+        switch boardSize {
+        case 4, 5:
+            board[2, 1] = .wall
+        case 7:
+            [(4, 2), (2, 0), (4, 0), (2, 2), (4, 4), (6, 2), (6, 4)]
+                .forEach { board[$0.0, $0.1] = .wall }
+        default:
+            break
+        }
     }
     
     init(copyOf game: Game) {
