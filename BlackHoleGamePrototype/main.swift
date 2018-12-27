@@ -66,8 +66,8 @@ func gameWithAIVariableDepth() {
     print(game.checkWin())
 }
 
-func twoAIs() {
-    let game = Game()
+func twoAIs(boardSize: Int = 6) {
+    let game = Game(boardSize: boardSize)
     var turn = 0
     while (game.checkWin() == .undecided) {
         print(game)
@@ -79,4 +79,4 @@ func twoAIs() {
     print(game)
     print(game.checkWin())
 }
-twoAIs()
+twoAIs(boardSize: 7)
