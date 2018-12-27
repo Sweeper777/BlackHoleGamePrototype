@@ -2,6 +2,7 @@ enum Tile : Equatable{
     case empty
     case red(number: Int)
     case blue(number: Int)
+    case wall
 }
 
 extension TriangularArray where T == Tile {
