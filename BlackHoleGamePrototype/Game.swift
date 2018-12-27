@@ -101,6 +101,8 @@ extension Game: CustomStringConvertible {
                     desc += ANSIColors.red + "\(num) "
                 case .blue(let num):
                     desc += ANSIColors.blue + "\(num) "
+                case .wall:
+                    desc += ANSIColors.black + "x "
                 }
             }
             desc += "\n"
