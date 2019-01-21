@@ -79,4 +79,4 @@ func twoAIs(boardSize: Int = 6) {
     print(game)
     print(game.checkWin())
 }
-twoAIs(boardSize: 7)
+gameWithAIVariableDepth()
